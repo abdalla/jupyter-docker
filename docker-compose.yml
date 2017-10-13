@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+  anaconda3:
+      build: .
+      image: anaconda3
+      container_name: anaconda3
+      tty: true
+      expose:
+            - "8888"
+      ports:
+        - "8888:8888"
+      volumes:
+        - ./notebooks:/notebooks
+        - ./data:/data
+        - ./logs:/tmp/tflearn_logs
+
+#      command: ["/bin/bash", "-c", "/opt/conda/bin/jupyter notebook", "--notebook-dir=/opt/notebooks", "--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
+#      command: ['source activate abdalla-anaconda && exec python application.py']

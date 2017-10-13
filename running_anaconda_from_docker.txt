@@ -1,0 +1,14 @@
+docker run -i -t -p 8888:8888 continuumio/anaconda3 /bin/bash -c /opt/conda/bin/conda install jupyter -y && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --allow-root
+
+
+
+docker run --name anaconda3 -i -t -p 8888:8888 continuumio/anaconda3 /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
+
+
+
+docker run -it -p 8888:8888 anaconda3 /bin/bash -c "mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
+
+
+==> perfect
+
+docker run -it -p 8888:8888 anaconda3 /bin/bash -c "jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root" 
