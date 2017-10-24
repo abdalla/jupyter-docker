@@ -50,3 +50,5 @@ webencodings==0.5.1
 Werkzeug==0.12.1
 widgetsnbextension==2.0.0
 scikit-learn
+r-base
+r-base-dev
